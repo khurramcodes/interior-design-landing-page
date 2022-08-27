@@ -23,7 +23,7 @@ header{
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .top-nav{
@@ -65,6 +65,8 @@ nav::after{
   margin-right: 65px;
 }
 
+/* Contact Box */
+
 .contact-box{
   display: flex;
   align-items: center;
@@ -80,16 +82,23 @@ nav::after{
   margin-left: 8px;
 }
 
+.btn-mobileNav{
+  display: none;
+  font-size: 30px;
+  border: 2px solid #fff;
+  padding: 2px 12px;
+  border-radius: 10px;
+}
+
 /* Hero Section */
 
 .hero-section{
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .left-section{
   width: 45%;
-  margin-left: 80px;
+  padding-left: 80px;
 }
 
 .hero-content h1{
@@ -129,8 +138,8 @@ nav::after{
 
 .card:nth-of-type(2){
   position: absolute;
-  top: 250px;
-  left: 120px;
+  top: 96%;
+  left: 15%;
 }
 
 .card svg{
@@ -167,4 +176,104 @@ nav::after{
   top: 20%;
   right: -31px;
   transform: rotate(-90deg);
+}
+
+/* Media Queries */
+
+@media screen and (max-width:1180px){
+  
+  nav{
+    width: 70%;
+  }
+
+  .nav-item{
+    margin-right: 25px;
+  }
+
+  .hero-content h1{
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width:1080px){
+  
+  nav{
+    width: 100%;
+  }
+
+  .left-section{
+    padding-left: 60px;
+  }
+
+  .hero-content h1{
+    font-size: 40px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width:960px){
+  
+  .logo{
+    width: 20%;
+  }
+
+  .nav-item{
+    margin-right: 20px;
+  }
+
+  nav::after{
+    bottom: 22px;
+  }
+
+  .left-section{
+    padding-left: 30px;
+  }
+
+  .hero-content h1{
+    font-size: 34px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+
+  .card:nth-of-type(2){
+    left: 0%;
+  }
+}
+
+@media screen and (max-width:768px){
+  nav{
+    display: none;
+  }
+
+  .btn-mobileNav{
+    display: block;
+  }
+
+  .hero-section{
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .left-section{
+    width: 100%;
+  }
+
+  .right-section{
+    position: initial;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-around;
+  }
+
+  .right-section .card{
+    position: initial;
+  }
+ 
+  .card:nth-of-type(1) .card-pin,
+  .card:nth-of-type(2) .card-pin {
+    display: none;
+  }
 }
